@@ -8,6 +8,7 @@ let DOLLAR_SYMBOL = "USD ";
 let PESO_SYMBOL = "UYU ";
 let PERCENTAGE_SYMBOL = '%';
 let SUCCESS_MSG = "¡Se ha realizado la publicación con éxito! :)";
+let SUCCESS_MSG = "¡Se ha realizado la publicación con éxito!! :)";
 let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
 //Función que se utiliza para actualizar los costos de publicación
