@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,38 +14,85 @@
   <link href="css/styles.css" rel="stylesheet">
   <style>
     html, body{
-      height: 100%;
-    }
-
-    body {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #f5f5f5;
-    }
-
-    .signin {
-      width: 100%;
-      max-width: 330px;
-      padding: 15px;
-      margin: auto;
-    }
+      height: 100%;}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+</head>
+<style>
+html,
+body {
+    height: 100%;
+}
+ 
+.global-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+ 
+form {
+    padding-top: 10px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+ 
+.card-title {
+    font-weight: 300;
+}
+ 
+.btn {
+    font-size: 14px;
+    margin-top: 20px;
+}
+ 
+.login-form {
+    width: 330px;
+    margin: 20px;
+}
+ 
+.sign-up {
+    text-align: center;
+    padding: 20px 0 0;
+}
+ 
+.alert {
+    margin-bottom: -30px;
+    font-size: 13px;
+    margin-top: 20px;
+}
+</style>
+    <div class="global-container">
+    <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">Ingresa a eMercado</h3>
+            <div class="card-text">
+                <form action='index.html'>
+                        <div class="form-group">
+                        <label for="exampleInputEmail1">Dirección de correo electrónico</label>
+                        <input type="email" required class="form-control form-control-sm" 
+                            id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo aquí" onblur="validarInicioSesion('exampleInputEmail1','errorMail')">
+                        </div>
+                    <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <a href="#" style="float:right;font-size:12px;">¿Olvidaste la constraseña? 
+               </a>
+                    <input type="password" required class="form-control form-control-sm"
+                        id="exampleInputPassword1" placeholder="Ingrese su contraseña aquí" onblur="validarInicioSesion('exampleInputPassword1','errorPass')">
+                    </div>
+                    <button type="text" class="btn btn-primary btn-block" >Ingresa</button>
+                     <div class="sign-up">
+                        ¿No tienes una cuenta aún? 
+                     <a href="#">Crear una</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>  
   </style>
 </head>
-
-<body class="text-center">
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 08/08/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
-
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>

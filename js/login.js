@@ -4,3 +4,22 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
+
+   function validarInicioSesion(){
+       var idemail, password1;
+       idemail= document.getElementById("exampleInputEmail1").value;
+       password1= document.getElementById("exampleInputPassword1").value;
+       if((idemail=="")&&(password1=="")){
+           alert("Todos los campos son obligatorios.");
+           return false;
+        } 
+       }
+       function indexSi(){
+        var idemail, password1;
+       idemail= document.getElementById("exampleInputEmail1").value;
+       password1= document.getElementById("exampleInputPassword1").value;
+       if((idemail=="")&&(password1=="")){
+           sessionStorage.setItem('login', true);
+           location.replace('index.html');
+       }
+    }
