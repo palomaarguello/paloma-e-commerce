@@ -40,14 +40,16 @@ var getJSONData = function(url){
     });
 }
 function empezar(){
-  if(sessionStorage.getItem('login') == null){
+  if(sessionStorage.getItem('login') == null && (window.location.href != "file:///C:/Users/Administrador/Desktop/PROYECTO/login.html")){
     location.replace('login.html');
+} else {
+  document.getElementById('mostrarUsuario').innerHTML=sessionStorage.getItem('login')
 }
 }
-
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
-  
+document.addEventListener("DOMContentLoaded", function(e){  
+  empezar();
 });
+

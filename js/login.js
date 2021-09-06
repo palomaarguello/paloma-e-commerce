@@ -4,7 +4,6 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
-
    function validarInicioSesion(){
        var idemail, password1;
        idemail= document.getElementById("exampleInputEmail1").value;
@@ -12,14 +11,18 @@ document.addEventListener("DOMContentLoaded", function(e){
        if((idemail=="")&&(password1=="")){
            alert("Todos los campos son obligatorios.");
            return false;
-        } 
-       }
-       function indexSi(){
+           } else {
+            sessionStorage.setItem('login', idemail);
+            location.replace('index.html');
+           }
+        }
+
+       /* function indexSi(){
         var idemail, password1;
        idemail= document.getElementById("exampleInputEmail1").value;
        password1= document.getElementById("exampleInputPassword1").value;
        if((idemail=="")&&(password1=="")){
-           sessionStorage.setItem('login', true);
+           sessionStorage.setItem('login', idemail);
            location.replace('index.html');
        }
-    }
+    } */
