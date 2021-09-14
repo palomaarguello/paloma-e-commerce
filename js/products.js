@@ -23,8 +23,8 @@ function sortProducts(criteria, array){
         });
     }else if (criteria === ORDER_BY_PROD_SOLD_COUNT){
         result = array.sort(function(a, b) {
-            let aCount = parseInt(a.soldCount);
-            let bCount = parseInt(b.soldCount);
+            let aCount = parseInt(a.cost);
+            let bCount = parseInt(b.cost);
 
             if ( aCount > bCount ){ return -1; }
             if ( aCount < bCount ){ return 1; }
@@ -68,8 +68,8 @@ function showProductsList(){
     for(let i = 0; i < currentProductsArray.length; i++){
         let product = currentProductsArray[i];
 
-        if (((minCount == undefined) || (minCount != undefined && parseInt(product.soldCount) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(product.soldCount) <= maxCount))){
+        if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))){
 
             htmlContentToAppend += `
             <a href="category-info.html" class="list-group-item list-group-item-action">
@@ -172,17 +172,4 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
-// //Función que se ejecuta una vez que se haya lanzado el evento de
-// //que el documento se encuentra cargado, es decir, se encuentran todos los
-// //elementos HTML presentes.
-// document.addEventListener("DOMContentLoaded", function (e) {
-//     getJSONData(PRODUCTS_URL).then(function(resultObj){
-//         if (resultObj.status === "ok")
-//         {
-//             carsArray = resultObj.data;
         
-//             showCarsList(carsArray);
-//             hideSpinner();
-//         }
-//     });
-// })}
