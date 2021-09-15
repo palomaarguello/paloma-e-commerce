@@ -139,3 +139,22 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+.clasificacion input[type='radio'] {
+  opacity: 0;
+}
+.clasificacion label {
+  font-size: 30px;
+  color: rgb(150, 150, 150);
+  cursor: pointer;
+}
+.clasificacion label:hover {
+  color: rgb(217, 162, 11);
+}
+.checkear+label {
+  color: rgb(217, 162, 11) !important;
+}
+.formGroup{
+  padding: 10px;
+  text-align: left;
+  border-color: transparent;
+}

@@ -70,7 +70,30 @@
         <dd>
           <p id="relatedProducts"></p>
         </dd>
-        
+        <dt>Comentarios relacionados:</dt><br>
+        <div id="comentarios"></div> <br>
+        <form>
+          <h4>Agrega tu comentario:</h4>
+           <div class="formGroup">
+            <input type="text" id="usuario" placeholder="Usuario"><br><br>
+            <textarea cols="50" rows="4" type="text" id="nuevoComentario" placeholder="Nuevo comentario"></textarea><br>
+            <small class="mb-6 text-muted">Puntuación del producto</small>
+          </div>
+          <p class="clasificacion">
+            <input id="radio1" type="radio" name="stars" value="1">
+            <label for="radio1">★</label>
+            <input id="radio2" type="radio" name="stars" value="2">
+            <label for="radio2">★</label>
+            <input id="radio3" type="radio" name="stars" value="3">
+            <label for="radio3">★</label>
+            <input id="radio4" type="radio" name="stars" value="4">
+            <label for="radio4">★</label>
+            <input id="radio5" type="radio" name="stars" value="5">
+            <label for="radio5">★</label>
+          </p>
+          <button type="button" onclick="agregarComentario()" id="comentar">Comentar</button><br>
+        </form>   
+        <br><br>
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>    
   </main>
