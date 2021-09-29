@@ -2,7 +2,7 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-
+    sessionStorage.removeItem('login');
 });
    function validarInicioSesion(){
        var idemail, password1;
@@ -16,13 +16,3 @@ document.addEventListener("DOMContentLoaded", function(e){
             location.replace('index.html');
            }
         }
-
-       /* function indexSi(){
-        var idemail, password1;
-       idemail= document.getElementById("exampleInputEmail1").value;
-       password1= document.getElementById("exampleInputPassword1").value;
-       if((idemail=="")&&(password1=="")){
-           sessionStorage.setItem('login', idemail);
-           location.replace('index.html');
-       }
-    } */

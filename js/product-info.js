@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             let productCurrencyHTML = document.getElementById("productCurrency");
             let productCountHTML = document.getElementById("productSoldCount");
             let productCategoryHTML = document.getElementById("productCategory");
-            let productRelatedHTML = document.getElementById("relatedProducts");
+            //let productRelatedHTML = document.getElementById("relatedProducts");
         
             productNameHTML.innerHTML = product.name;
             productDescriptionHTML.innerHTML = product.description;
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             productCurrencyHTML.innerHTML = product.currency;
             productCountHTML.innerHTML = product.soldCount;
             productCategoryHTML.innerHTML = product.category;
-            productRelatedHTML.innerHTML = product.relatedProducts;
+            //productRelatedHTML.innerHTML = product.relatedProducts;
 
             //Muestro las imagenes en forma de galería
             showProductsGallery(product.images);
@@ -153,4 +153,41 @@ $(".clasificacion").find("label").mouseover(function() {
             showCommentsGallery();
         }
     });
+var carsArray = [];
+function showProductsRelatedList(array){
+
+    let htmlContentToAppend = "";
+    for(let i = 0; i < array.length; i++){
+        let product = array[i];
+        if (i==[1]||i==[3]){            
+        htmlContentToAppend += `
+            <a href="product-info.html" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">`+ product.name +`</h4>
+                            <small class="text-muted">` + product.soldCount + ` artículos</small>
+                        </div>
+                        <p class="mb-1">` + product.description + `</p>
+                        <p class="mb-1">` + product.cost + `</p>
+                    </div>
+                </div>
+            </a>
+            `
+        }}
+
+        document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;
+    }
+document.addEventListener("DOMContentLoaded", function(e){
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
+        if (resultObj.status === "ok"){
+            carsArray=resultObj.data;
+        showProductsRelatedList(carsArray);
+        }
+    })
+});
+
 
